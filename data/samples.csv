@@ -1,0 +1,10 @@
+sample_id,label,file,group,holder,grain_size_mm,pixel_size_um,pixel_size_source,roi_cx,roi_cy,roi_r,notes
+DS23_CF4,CF4,DS23_CF4_3mm_25g_0244.tif,granular_pack,container,3,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,spheroidal grains in cylindrical holder
+DS23_CF5,CF5,DS23_CF5_3mm_25g0280.tif,granular_pack,container,3,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,spheroidal grains in cylindrical holder
+DS23_CF7,CF7,DS23_CF7_4mm_25_0340.tif,granular_pack,container,4,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,spheroidal grains in cylindrical holder
+DS23_CF10,CF10,DS23_CF10_M_0245.tif,granular_pack,container,mixed,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,mixed grain sizes; some grains of lower attenuation
+AG24_VN01,VN01,AG24_VN01_01_0207.tif,consolidated,free,,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,unimodal histogram; few resolved pores; lab value method not specified
+AG24_VN02,VN02,AG24_VN02_250425.tif,consolidated,free,,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,unimodal histogram; fractures; lab value method not specified
+AG24_VN04,VN04,AG24_VN04_01_0049.tif,consolidated,free,,25.0,TIFF resolution tag (25.4 mm / 1016 dpi); confirmed by the authors,,,,heterogeneous resolved porosity; lab value method not specified
+BC23_TQ06,TQ06,BC23_TQ-06_40_0114.tif,consolidated,free,,40.0,TIFF resolution tag (25.4 mm / 635 dpi) and file-name token _40_; confirmed by the authors,,,,narrow unimodal histogram; ring artefact at the centre; no lab value
+GT24_01,GT01,GT24_01_40_0220.tif,consolidated,free,,40.0,file-name token _40_ (TIFF tag is a 300 dpi default); confirmed by the authors,,,,elongated dark pores; bright inclusions (long right histogram tail); no lab value

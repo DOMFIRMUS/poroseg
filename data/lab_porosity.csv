@@ -1,0 +1,53 @@
+sample_id,specimen,method,porosity_pct,has_image,source
+DS23_CF4,CF4_3mm,direct,38.7,True,dados reais de porosidade.xlsx: row 3
+DS23_CF4,CF4_3mm,gravimetric,38.07,True,dados reais de porosidade.xlsx: row 3
+DS23_CF4,CF4_3mm,indirect,39.05,True,dados reais de porosidade.xlsx: row 3
+DS23_CF4,CF4_3mm,gas,37.14,True,dados reais de porosidade.xlsx: row 3
+DS23_CF4,CF4_3mm,uct,32.92,True,dados reais de porosidade.xlsx: row 3
+DS23_CF5,CF5_3mm,direct,40.07,True,dados reais de porosidade.xlsx: row 4
+DS23_CF5,CF5_3mm,gravimetric,40.1,True,dados reais de porosidade.xlsx: row 4
+DS23_CF5,CF5_3mm,indirect,39.04,True,dados reais de porosidade.xlsx: row 4
+DS23_CF5,CF5_3mm,gas,38.93,True,dados reais de porosidade.xlsx: row 4
+DS23_CF5,CF5_3mm,uct,33.38,True,dados reais de porosidade.xlsx: row 4
+PACK_CF6_3mm,CF6_3mm,direct,40.99,False,dados reais de porosidade.xlsx: row 5
+PACK_CF6_3mm,CF6_3mm,gravimetric,40.95,False,dados reais de porosidade.xlsx: row 5
+PACK_CF6_3mm,CF6_3mm,indirect,40.1,False,dados reais de porosidade.xlsx: row 5
+PACK_CF6_3mm,CF6_3mm,gas,39.86,False,dados reais de porosidade.xlsx: row 5
+PACK_CF6_3mm,CF6_3mm,uct,33.4,False,dados reais de porosidade.xlsx: row 5
+DS23_CF7,CF7_4mm,direct,40.7,True,dados reais de porosidade.xlsx: row 6
+DS23_CF7,CF7_4mm,gravimetric,40.33,True,dados reais de porosidade.xlsx: row 6
+DS23_CF7,CF7_4mm,indirect,40.87,True,dados reais de porosidade.xlsx: row 6
+DS23_CF7,CF7_4mm,gas,39.51,True,dados reais de porosidade.xlsx: row 6
+DS23_CF7,CF7_4mm,uct,33.52,True,dados reais de porosidade.xlsx: row 6
+PACK_CF8_4mm,CF8_4mm,direct,40.86,False,dados reais de porosidade.xlsx: row 7
+PACK_CF8_4mm,CF8_4mm,gravimetric,40.94,False,dados reais de porosidade.xlsx: row 7
+PACK_CF8_4mm,CF8_4mm,indirect,41.6,False,dados reais de porosidade.xlsx: row 7
+PACK_CF8_4mm,CF8_4mm,gas,39.95,False,dados reais de porosidade.xlsx: row 7
+PACK_CF8_4mm,CF8_4mm,uct,33.92,False,dados reais de porosidade.xlsx: row 7
+PACK_CF9_4mm,CF9_4mm,direct,40.15,False,dados reais de porosidade.xlsx: row 8
+PACK_CF9_4mm,CF9_4mm,gravimetric,40.48,False,dados reais de porosidade.xlsx: row 8
+PACK_CF9_4mm,CF9_4mm,indirect,40.04,False,dados reais de porosidade.xlsx: row 8
+PACK_CF9_4mm,CF9_4mm,gas,39.17,False,dados reais de porosidade.xlsx: row 8
+PACK_CF9_4mm,CF9_4mm,uct,36.63,False,dados reais de porosidade.xlsx: row 8
+DS23_CF10,CF10_M,direct,40.0,True,dados reais de porosidade.xlsx: row 9
+DS23_CF10,CF10_M,gravimetric,39.95,True,dados reais de porosidade.xlsx: row 9
+DS23_CF10,CF10_M,indirect,38.92,True,dados reais de porosidade.xlsx: row 9
+DS23_CF10,CF10_M,gas,39.17,True,dados reais de porosidade.xlsx: row 9
+DS23_CF10,CF10_M,uct,31.68,True,dados reais de porosidade.xlsx: row 9
+PACK_CF11_M,CF11_M,direct,40.0,False,dados reais de porosidade.xlsx: row 10
+PACK_CF11_M,CF11_M,gravimetric,40.25,False,dados reais de porosidade.xlsx: row 10
+PACK_CF11_M,CF11_M,indirect,39.11,False,dados reais de porosidade.xlsx: row 10
+PACK_CF11_M,CF11_M,gas,36.67,False,dados reais de porosidade.xlsx: row 10
+PACK_CF11_M,CF11_M,uct,31.49,False,dados reais de porosidade.xlsx: row 10
+PACK_CF12_M,CF12_M,direct,40.15,False,dados reais de porosidade.xlsx: row 11
+PACK_CF12_M,CF12_M,gravimetric,40.07,False,dados reais de porosidade.xlsx: row 11
+PACK_CF12_M,CF12_M,indirect,38.01,False,dados reais de porosidade.xlsx: row 11
+PACK_CF12_M,CF12_M,gas,36.83,False,dados reais de porosidade.xlsx: row 11
+PACK_CF12_M,CF12_M,uct,27.03,False,dados reais de porosidade.xlsx: row 11
+AG24_VN01,Amostra 1,unspecified,16.17,True,dados reais de porosidade.xlsx: row 16
+AG24_VN02,Amostra 2,unspecified,24.38,True,dados reais de porosidade.xlsx: row 17
+CONS_Amostra3,Amostra 3,unspecified,27.29,False,dados reais de porosidade.xlsx: row 18
+AG24_VN04,Amostra 4,unspecified,21.05,True,dados reais de porosidade.xlsx: row 19
+CONS_Amostra5,Amostra 5,unspecified,22.71,False,dados reais de porosidade.xlsx: row 20
+CONS_Amostra6,Amostra 6,unspecified,24.39,False,dados reais de porosidade.xlsx: row 21
+CONS_Amostra7,Amostra 7,unspecified,25.21,False,dados reais de porosidade.xlsx: row 22

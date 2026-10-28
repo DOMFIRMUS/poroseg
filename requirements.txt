@@ -1,0 +1,16 @@
+# Python >= 3.10 (tested with Python 3.14 on Windows 11). Minimum versions below; the exact
+# versions used for the published results are recorded automatically in
+# outputs/logs/provenance.json.
+numpy>=2.0
+scipy>=1.13
+pandas>=2.2
+scikit-image>=0.25
+scikit-learn>=1.5
+matplotlib>=3.9
+statsmodels>=0.14
+pingouin>=0.5.5
+tifffile>=2024.1
+openpyxl>=3.1
+pyyaml>=6.0
+jinja2>=3.1
+pytest>=8.0

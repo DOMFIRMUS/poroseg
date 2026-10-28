@@ -1,0 +1,128 @@
+# =============================================================================
+# poroseg - configuration of the full analysis
+# The numerical choices of the analysis live here (the random-forest settings
+# of the machine-learning baselines are in poroseg/stages/ml_baseline.py), so
+# that the "Methods" section of the paper can be written from this file (and
+# from outputs/tables/methods_parameters.csv, generated automatically).
+# Paths are relative to this file.
+# =============================================================================
+
+project:
+  name: "Segmentation-induced uncertainty in uCT porosity"
+  seed: 20250923            # master seed; every stochastic step derives from it
+
+paths:
+  images_dir: "../imagens"
+  samples_csv: "data/samples.csv"
+  lab_csv: "data/lab_porosity.csv"
+  lab_xlsx: "../dados reais de porosidade.xlsx"
+  legacy_results_dir: "../results/analysis_20250723_145220"
+  output_dir: "outputs"
+
+# -----------------------------------------------------------------------------
+# Region of interest
+# -----------------------------------------------------------------------------
+roi:
+  primary: disk               # ROI used by every inferential analysis
+  designs: [disk, center500]  # disk = largest usable disc inside the sample/holder
+                              # center500 = original design (500x500 px, image centre)
+  center_size_px: 500
+  free_margin_frac: 0.03      # free-standing cores: exclude outer 3 % of radius (edge artefacts, cupping)
+  container_margin_px: 6      # packed holders: exclude 6 px next to the inner wall (partial volume with wall)
+  eval_border_px: 2           # metrics ignore a 2 px rim so filters never see the ROI border
+
+# -----------------------------------------------------------------------------
+# Intensity normalisation (applied before every thresholding algorithm)
+# -----------------------------------------------------------------------------
+normalization:
+  p_low: 0.1                  # percentiles computed inside the ROI; values clipped to [p_low, p_high]
+  p_high: 99.9                # and rescaled to [0, 1] (float32)
+
+# -----------------------------------------------------------------------------
+# Factor A: thresholding algorithm
+# -----------------------------------------------------------------------------
+thresholds:
+  methods: [Otsu, Li, Yen, Mean, Triangle, Isodata, Sauvola, Niblack]
+  nbins: 256                  # histogram resolution for histogram-based methods (= 8-bit quantisation)
+  pore_is_dark: true          # pore = I <= T (low X-ray attenuation)
+  sauvola: {window: 25, k: 0.2, r: 0.5}   # r = half the normalised dynamic range (Sauvola & Pietikainen 2000)
+  niblack: {window: 25, k: 0.8}           # T = m - k*s (scikit-image convention); w and k as in the original code
+
+# -----------------------------------------------------------------------------
+# Factor B: binary post-processing (always applied to the PORE phase)
+# -----------------------------------------------------------------------------
+postprocessing:
+  levels: [none, median, open_close, skeleton]
+  median_size: 3              # 3x3 majority (median) filter
+  morph_se: square            # structuring element: square | disk
+  morph_size: 3               # 3x3 opening followed by 3x3 closing
+  # 'skeleton' does not preserve area: it is reported as a medial-axis density,
+  # never as a porosity, and is excluded from porosity inference.
+
+# -----------------------------------------------------------------------------
+# Statistics
+# -----------------------------------------------------------------------------
+statistics:
+  alpha: 0.05
+  ci_level: 0.95
+  n_boot: 10000               # bootstrap replicates for inferential CIs (reduced in --quick)
+  p_adjust: holm
+  reference_method: Otsu      # reference for method-vs-method Bland-Altman
+
+lab:
+  # Reference porosity = mean of the independent physical methods.
+  # The laboratory's own uCT value is NOT part of the reference (it would make
+  # the comparison partly circular); it is analysed separately.
+  reference_methods: [direct, gravimetric, indirect, gas]
+  uct_method: uct
+
+# -----------------------------------------------------------------------------
+# Spatial variability, REV and resampling
+# -----------------------------------------------------------------------------
+spatial:
+  tile_sizes_px: [16, 24, 32, 48, 64, 96, 128, 192, 256, 384]
+  block_tile_px: 64           # tile size for the block bootstrap (checked against correlation length)
+  n_boot_pixels: 1000         # pixel-iid bootstrap, reproduced only to show pseudo-replication
+  target_abs_error_pp: 1.0    # REV criterion: 95 % half-width of +/- 1 porosity point
+  radial_bin_px: 10
+
+# -----------------------------------------------------------------------------
+# Threshold sensitivity (TSM, PSI) and local-parameter sweep
+# -----------------------------------------------------------------------------
+sensitivity:
+  psi_delta: 0.05             # +/- 5 % of the normalised dynamic range
+  tsm_deltas: [-0.20, -0.16, -0.12, -0.08, -0.06, -0.04, -0.02, 0.0, 0.02, 0.04, 0.06, 0.08, 0.12, 0.16, 0.20]
+  sweep_windows: [15, 25, 51, 101, 201]
+  sweep_sauvola_k: [0.1, 0.2, 0.3, 0.5]
+  sweep_niblack_k: [0.0, 0.2, 0.5, 0.8]
+
+# -----------------------------------------------------------------------------
+# Robustness to acquisition artefacts (controlled perturbations of real images)
+# -----------------------------------------------------------------------------
+perturbation:
+  noise_sd: [0.0, 0.01, 0.02, 0.04, 0.08]     # additive Gaussian noise, normalised units
+  cupping: [0.0, 0.05, 0.10, 0.20, 0.30]      # radial beam-hardening-like gain: I*(1 - c*(1 - (r/R)^2))
+  blur_sigma: [0.0, 0.5, 1.0, 2.0, 3.0]       # Gaussian blur (px): extra partial-volume effect
+  n_rep: 5
+
+# -----------------------------------------------------------------------------
+# Synthetic benchmark with known ground truth
+# -----------------------------------------------------------------------------
+synthetic:
+  size_px: 512
+  n_rep: 5
+  phantoms: [grain_pack, boolean_pores, multiscale]
+  blur_sigma: [0.5, 1.5, 3.0]
+  noise_sd: [0.02, 0.05, 0.10]
+  cupping: [0.0, 0.15]
+
+# -----------------------------------------------------------------------------
+# Figures
+# -----------------------------------------------------------------------------
+figures:
+  formats: [pdf, png]         # pdf = vector (text editable); png at 'dpi'
+  dpi: 600
+  width_single_mm: 90
+  width_onehalf_mm: 140
+  width_double_mm: 190
+  font_size: 7.5

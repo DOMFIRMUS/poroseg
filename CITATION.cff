@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article and the archived code."
+title: "poroseg: segmentation-induced uncertainty of micro-CT porosity"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Cardoso
+    given-names: Jean Firmino
+    orcid: "https://orcid.org/0000-0001-6092-713X"
+    affiliation: "Federal University of Pernambuco"
+  - family-names: Silva
+    given-names: Daiane Francisca do Nascimento
+    orcid: "https://orcid.org/0000-0002-1057-7335"
+    affiliation: "Federal University of Pernambuco"
+  - family-names: Santos Neto
+    given-names: Severino Martins dos
+    orcid: "https://orcid.org/0000-0003-2940-2129"
+    affiliation: "Federal University of Pernambuco"
+  - family-names: Reichert
+    given-names: José Miguel
+    orcid: "https://orcid.org/0000-0001-9943-2898"
+    affiliation: "Federal University of Pernambuco; Federal University of Pelotas"
+  - family-names: Milian Pérez
+    given-names: Daniel
+    orcid: "https://orcid.org/0000-0002-3172-0508"
+    affiliation: "Federal University of Pernambuco"
+  - family-names: Antonino
+    given-names: Antonio Celso Dantas
+    orcid: "https://orcid.org/0000-0002-4120-9404"
+    affiliation: "Federal University of Pernambuco"
+keywords:
+  - micro-CT
+  - image segmentation
+  - porosity
+  - uncertainty quantification
+preferred-citation:
+  type: article
+  title: "How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison"
+  journal: "Computers & Geosciences"
+  status: submitted
+  authors:
+    - family-names: Cardoso
+      given-names: Jean Firmino
+    - family-names: Silva
+      given-names: Daiane Francisca do Nascimento
+    - family-names: Santos Neto
+      given-names: Severino Martins dos
+    - family-names: Reichert
+      given-names: José Miguel
+    - family-names: Milian Pérez
+      given-names: Daniel
+    - family-names: Antonino
+      given-names: Antonio Celso Dantas

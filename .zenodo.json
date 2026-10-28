@@ -1,0 +1,52 @@
+{
+  "upload_type": "software",
+  "title": "poroseg: segmentation-induced uncertainty of micro-CT porosity",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Cardoso, Jean Firmino",
+      "orcid": "0000-0001-6092-713X",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+    },
+    {
+      "name": "Silva, Daiane Francisca do Nascimento",
+      "orcid": "0000-0002-1057-7335",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+    },
+    {
+      "name": "Santos Neto, Severino Martins dos",
+      "orcid": "0000-0003-2940-2129",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+    },
+    {
+      "name": "Reichert, José Miguel",
+      "orcid": "0000-0001-9943-2898",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil; Department of Soils, Federal University of Pelotas (UFPel), Capão do Leão, Brazil"
+    },
+    {
+      "name": "Milian Pérez, Daniel",
+      "orcid": "0000-0002-3172-0508",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+    },
+    {
+      "name": "Antonino, Antonio Celso Dantas",
+      "orcid": "0000-0002-4120-9404",
+      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+    }
+  ],
+  "keywords": [
+    "micro-CT",
+    "image segmentation",
+    "porosity",
+    "uncertainty quantification",
+    "thresholding",
+    "representative elementary area",
+    "block bootstrap",
+    "digital rock physics",
+    "Python"
+  ],
+  "description": "Python package that regenerates, with one command (python -m poroseg.run --stages all), every number, table and figure of the article \"How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison\" (Computers & Geosciences, submitted) from nine 2-D micro-CT slices. Factorial segmentation design (8 thresholding algorithms x 4 post-processing levels x 2 regions of interest), exact variance decomposition, two-point statistics and block bootstrap, threshold-sensitivity indices, controlled artefacts, synthetic phantoms with known truth, morphology and topology, machine-learning baselines, agreement with laboratory porosity and an audit of the original analysis code. Tested with pytest, seeded, with provenance records. The micro-CT slices and derived data are archived in the companion data record.",
+  "notes": "Funding: PRH-ANP/FAPESP (2025/17670-6; 2025/03556-7; 2024/10544-2), FACEPE (IBPG-1473-3.09/25; APQ-1428-3.01/25), CAPES (Finance Code 001)."
+}
