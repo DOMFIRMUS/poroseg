@@ -6,34 +6,119 @@
   "language": "eng",
   "creators": [
     {
-      "name": "Cardoso, Jean Firmino",
+      "name": "Firmino Cardoso, Jean",
       "orcid": "0000-0001-6092-713X",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+      "affiliation": "Universidade Federal de Pernambuco"
     },
     {
-      "name": "Silva, Daiane Francisca do Nascimento",
+      "name": "Bezerra de Lima, Hugo Emanoel",
+      "orcid": "0009-0006-4025-1770",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Lancha, Rebeca",
+      "orcid": "0009-0001-5265-7181",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Regina, Vitória",
+      "orcid": "0009-0003-1475-4815",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Felipe de Carvalho, Bruno",
+      "orcid": "0000-0002-2951-9362",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "do Nascimento Silva, Daiane Francisca",
       "orcid": "0000-0002-1057-7335",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+      "affiliation": "Universidade Federal de Pernambuco"
     },
     {
-      "name": "Santos Neto, Severino Martins dos",
+      "name": "Roberto da Silva, José",
+      "orcid": "0009-0005-7142-5422",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Moura Vieira Júnior, Clériston",
+      "orcid": "0000-0002-5424-6378",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Ge Proenza, Yaicel",
+      "orcid": "0000-0003-3894-8326",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Gámez Rodríguez, Abel",
+      "orcid": "0000-0002-1584-6768",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "García-Fornaris, Ivan",
+      "orcid": "0000-0003-3172-1057",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Carlos Araújo de Santana, Alexandre",
+      "orcid": "0000-0002-6717-5396",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Milani, Raquel",
+      "orcid": "0000-0001-8076-6118",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Albuquerque, Allan",
+      "orcid": "0000-0002-1305-3182",
+      "affiliation": "Federal University of Pernambuco"
+    },
+    {
+      "name": "González Pérez, Yelina",
+      "orcid": "0009-0009-1431-5314",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Martins dos Santos Neto, Severino",
       "orcid": "0000-0003-2940-2129",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+      "affiliation": "Universidade Federal de Pernambuco"
     },
     {
-      "name": "Reichert, José Miguel",
-      "orcid": "0000-0001-9943-2898",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil; Department of Soils, Federal University of Pelotas (UFPel), Capão do Leão, Brazil"
+      "name": "Correa, Marcelo",
+      "orcid": "0000-0003-0929-4634",
+      "affiliation": "Universidade Federal do Agreste de Pernambuco"
+    },
+    {
+      "name": "Correa, Marcus Metri",
+      "orcid": "0000-0002-9506-8969",
+      "affiliation": "Universidade Federal Rural de Pernambuco"
+    },
+    {
+      "name": "Damilano Dutra, Emmanuel",
+      "orcid": "0000-0002-3245-2795",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Barcelar de Araújo Filho, Hugo",
+      "orcid": "0009-0002-6244-6166",
+      "affiliation": "Universidade Federal de Pernambuco"
     },
     {
       "name": "Milian Pérez, Daniel",
       "orcid": "0000-0002-3172-0508",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+      "affiliation": "Universidade Federal de Pernambuco"
     },
     {
-      "name": "Antonino, Antonio Celso Dantas",
+      "name": "Reichert, José Miguel",
+      "orcid": "0000-0001-9943-2898",
+      "affiliation": "Universidade Federal de Pernambuco"
+    },
+    {
+      "name": "Dantas Antonino, Antonio Celso",
       "orcid": "0000-0002-4120-9404",
-      "affiliation": "Department of Nuclear Energy, Federal University of Pernambuco (UFPE), Recife, Brazil"
+      "affiliation": "Universidade Federal de Pernambuco"
     }
   ],
   "keywords": [
@@ -47,6 +132,6 @@
     "digital rock physics",
     "Python"
   ],
-  "description": "Python package that regenerates, with one command (python -m poroseg.run --stages all), every number, table and figure of the article \"How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison\" (Computers & Geosciences, submitted) from nine 2-D micro-CT slices. Factorial segmentation design (8 thresholding algorithms x 4 post-processing levels x 2 regions of interest), exact variance decomposition, two-point statistics and block bootstrap, threshold-sensitivity indices, controlled artefacts, synthetic phantoms with known truth, morphology and topology, machine-learning baselines, agreement with laboratory porosity and an audit of the original analysis code. Tested with pytest, seeded, with provenance records. The micro-CT slices and derived data are archived in the companion data record.",
+  "description": "Python package that regenerates, with one command (python -m poroseg.run --stages all), every number, table and figure of the article \"How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison\" (Computers & Geosciences, submitted). Version 1.0.0 is archived, together with the micro-CT slices and all derived data, in the Zenodo record https://doi.org/10.5281/zenodo.23748709; this file is kept only for future releases.",
   "notes": "Funding: PRH-ANP/FAPESP (2025/17670-6; 2025/03556-7; 2024/10544-2), FACEPE (IBPG-1473-3.09/25; APQ-1428-3.01/25), CAPES (Finance Code 001)."
 }

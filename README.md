@@ -50,7 +50,7 @@ python -m poroseg.run --stages descriptive --samples DS23_CF5,AG24_VN04    # a s
 ## Input data
 
 The micro-CT slices are not stored in this repository. Download `poroseg-data-v1.0.0.zip` from the data
-record of the article ([DATA-DOI]) and extract it into the folder that **contains** this code folder:
+record of the article (https://doi.org/10.5281/zenodo.23748709) and extract it into the folder that **contains** this code folder:
 
 ```
 any-folder/
@@ -60,7 +60,9 @@ any-folder/
 ```
 
 These are the default paths of `config.yaml` (`paths.images_dir`, `paths.legacy_results_dir`); edit them
-if you keep the data elsewhere. Sample metadata (`data/samples.csv`) and laboratory porosity
+if you keep the data elsewhere. Some unzip tools create an extra folder named after the archive
+(`poroseg-data-v1.0.0/`): if so, move `imagens/` and `results/` one level up, next to the code folder.
+Sample metadata (`data/samples.csv`) and laboratory porosity
 (`data/lab_porosity.csv`) are already in this repository and are the inputs the pipeline reads;
 `scripts/build_lab_table.py` only documents how `lab_porosity.csv` was derived from the laboratory
 spreadsheet (`paths.lab_xlsx`, not distributed), and the pipeline does not need that file.
@@ -71,12 +73,36 @@ change them and run again. The random-forest settings of the machine-learning ba
 `poroseg/stages/ml_baseline.py`, and the reduced replicate counts of `--quick` in the stage modules and
 `poroseg/context.py`.
 
+## Using your own slices
+
+1. Put the 2-D slices (TIFF, any bit depth) in a folder and set `paths.images_dir` in `config.yaml`.
+2. Describe them in `data/samples.csv`, one row per slice. Required columns: `sample_id` (unique), `label`
+   (short name used in figures), `file` (file name inside `images_dir`), `group` (`granular_pack` or
+   `consolidated`), `holder` (`container` for loose material in a cylindrical holder, `free` for a free-standing
+   core) and `pixel_size_um`. Optional: `grain_size_mm`, `pixel_size_source`, `notes`, and `roi_cx`, `roi_cy`,
+   `roi_r` (pixels) to impose the disc ROI instead of detecting it.
+3. Laboratory porosity is optional. If you have it, list it in `data/lab_porosity.csv` in long format, one row per
+   specimen and method: `sample_id`, `specimen`, `method` and `porosity_pct` (plus the optional `has_image` and
+   `source`). The methods averaged into the reference are set in `config.yaml` (`lab.reference_methods`); any
+   other method, such as `uct`, is reported but never used as the reference.
+4. Run the stages you need. The `legacy` stage only audits the original analysis of the article, so leave it out:
+
+```bash
+python -m poroseg.run --stages segmentation,descriptive,spatial,sensitivity,perturbation,morphology,inference,report
+```
+
+Command-line options (`python -m poroseg.run --help`): `--stages` (comma-separated list, or `all`), `--quick`
+(fewer replicates, written to `outputs_quick/`), `--samples` (comma-separated subset of `sample_id`),
+`--config` (another configuration file) and `--keep-going` (continue after a failing stage). Stages read the
+outputs of earlier stages from `outputs/`, so a later stage can be re-run alone.
+
 ## Outputs (`outputs/`)
 
 | Path | Content |
 |---|---|
 | `figures/` | every figure as vector PDF and 600-dpi PNG |
-| `tables/` | every table as CSV, LaTeX and Markdown; `tables_all.xlsx` |
+| `tables/` | every table as CSV, LaTeX and Markdown |
+| `tables_all.xlsx` | every table in one workbook |
 | `data/` | tidy full-precision data behind each figure/table |
 | `key_numbers.json`, `RESULTS_DIGEST.md` | every number quoted in the article, with description and producing stage |
 | `FIGURES_AND_TABLES.md` | catalogue of figures/tables with draft captions |
@@ -112,4 +138,4 @@ from `outputs/key_numbers.json`.
 
 Please cite the article and the version of the code you used, archived on Zenodo (its DOI is in
 `CITATION.cff` and on the Zenodo record linked from this repository). Code released under the MIT
-licence (`LICENSE`); the data record ([DATA-DOI]) is released under CC BY 4.0.
+licence (`LICENSE`); the data record (https://doi.org/10.5281/zenodo.23748709) is released under CC BY 4.0.
