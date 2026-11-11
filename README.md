@@ -1,4 +1,4 @@
-# poroseg — segmentation-induced uncertainty of micro-CT porosity
+# poroseg: segmentation-induced uncertainty of micro-CT porosity
 
 Code and data for the article *"How much of the porosity measured on micro-CT slices is the analyst's choice?
 A factorial uncertainty analysis with synthetic ground truth and laboratory comparison"* (Cardoso et al.,
@@ -24,7 +24,7 @@ Version 1.1.0 · MIT licence · Python ≥ 3.10 · archived at https://doi.org/1
 Isodata, Sauvola, Niblack) × four post-processing levels (none, median, opening–closing, skeleton) × two
 region-of-interest designs, and then quantifies:
 
-| Stage | Question |
+| Stage | What it computes |
 |---|---|
 | `segmentation` | the full factorial design (576 segmentations for the nine slices) |
 | `descriptive` | histograms, bimodality, failures, pixel agreement between algorithms, ROI-design effect |
@@ -127,9 +127,9 @@ tests/                 pytest suite
 
 ## Reproducibility
 
-All random numbers derive from the master seed in `config.yaml` through per-purpose streams, the
-inputs are checksummed in `outputs/logs/provenance.json`, and the article's text reads its numbers
-from `outputs/key_numbers.json`.
+All random numbers derive from the master seed in `config.yaml`, through one stream per purpose. The
+inputs are checksummed in `outputs/logs/provenance.json`, and the article takes its numbers from
+`outputs/key_numbers.json`.
 
 ## Changes in version 1.1.0
 

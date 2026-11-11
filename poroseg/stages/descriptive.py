@@ -1247,7 +1247,7 @@ def run(ctx) -> None:
                      "corner) by the eight thresholding algorithms (rows) and the four post-processing levels "
                      "(columns; all applied to the pore phase). Pores in orange over the normalised grey image. "
                      "Numbers: porosity of the whole primary ROI (largest usable disc); for the skeleton column, "
-                     "skeleton (medial-axis) density 'sk' — a topology descriptor, not a porosity; the 1-px "
+                     "skeleton (medial-axis) density 'sk', which describes topology and is not a porosity; the 1-px "
                      "skeleton is drawn dilated to 3 px for visibility.", kind="supp")
 
     fig, order = _fig_similarity(ctx, M, ctx.methods)

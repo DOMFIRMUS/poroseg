@@ -198,24 +198,24 @@ The most used data files are:
 
 ## 8 Expected behaviour
 
-* **Determinism.** With the same inputs, configuration and package versions the results are identical from
-  run to run: every random number comes from a stream derived from `project.seed` and the purpose of the
-  stream. `--quick` uses fewer replicates, so its intervals differ slightly from the full run.
-* **Failures are flagged, never dropped.** Segmentations with porosity below 1 % or above 90 % are marked as
-  failures in the tables and kept in every analysis.
-* **Integral range.** When the normalised covariance never crosses zero within the largest lag (large-scale
-  trends such as cupping or a wall effect), the integral range is flagged as not converged
-  (`ir_converged = False`) and the covariance-based L_REV is a lower bound.
-* **Block bootstrap.** The block side is the smallest configured tile side of at least
+* With the same inputs, configuration and package versions, two runs give identical results, because every
+  random number comes from a stream derived from `project.seed` and the purpose of the stream. `--quick` uses
+  fewer replicates, so its intervals differ slightly from those of the full run.
+* Segmentations with porosity below 1 % or above 90 % are marked as failures in the tables and kept in every
+  analysis.
+* When the normalised covariance never crosses zero within the largest lag (large-scale trends such as
+  cupping or a wall effect), the integral range is flagged as not converged (`ir_converged = False`) and the
+  covariance-based L_REV is a lower bound.
+* The block side of the block bootstrap is the smallest configured tile side of at least
   max(`spatial.block_tile_px`, 3 l_c) that still yields 20 complete tiles; `block_rule` in
   `spatial_summary.csv` says when this was not possible.
-* **Local methods** use masked local statistics, so pixels outside the ROI never bias the threshold map.
-* **Laboratory comparison** is computed only for images with a laboratory value; the other analyses do not
-  use the laboratory values.
-* **Statistics with few images.** Tests and bootstrap intervals over images need at least three images; with
-  n images the smallest attainable exact p-value of a two-sided signed-rank test is 2 / 2^n.
-* **Warnings** (for example a non-converged integral range or a ROI too small for 20 blocks) are written to
-  `logs/run.log`; a failing stage stops the run unless `--keep-going` is given.
+* The local methods use masked local statistics, so pixels outside the ROI never bias the threshold map.
+* The comparison with the laboratory uses only the images that have a laboratory value, and no other analysis
+  uses the laboratory values.
+* Tests and bootstrap intervals over images need at least three images. With n images, the smallest exact
+  p-value a two-sided signed-rank test can reach is 2 / 2^n.
+* Warnings, for example a non-converged integral range or a ROI too small for 20 blocks, go to
+  `logs/run.log`. A failing stage stops the run unless `--keep-going` is given.
 
 ## 9 Python API
 

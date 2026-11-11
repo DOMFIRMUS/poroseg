@@ -1,4 +1,4 @@
-# Tutorial 2 — Segment a real slice and measure threshold stability
+# Tutorial 2: Segment a real slice and measure threshold stability
 
 **Goal:** apply the factorial design of the article (eight algorithms × three area-preserving post-processing
 levels) to one micro-CT slice, and compute the Pore Stability Index of each algorithm. **Time:** under a
@@ -31,9 +31,9 @@ range across the eight algorithms (no post-processing): 18.6 percentage points
 
 `threshold` is in normalised grey level (for the local methods, the mean of the threshold map).
 `psi` is the Pore Stability Index, `1 − min(1, |φ(T+δ) − φ(T−δ)| / (2 φ(T)))` with δ = 0.05: 1 means that
-shifting the threshold by ±5 % of the grey range hardly changes the porosity. Stability is not accuracy: the
-local methods have the lowest PSI here, and Otsu, the most stable, still differs from the laboratory porosity
-of this pack (39.5 %) by about 10 points.
+shifting the threshold by ±5 % of the grey range hardly changes the porosity. The local methods have the
+lowest PSI here. A high PSI does not mean an accurate porosity: Otsu, the most stable algorithm, still differs
+from the laboratory porosity of this pack (39.5 %) by about 10 points.
 
 The histogram with the eight thresholds is written to `examples/outputs/segment_DS23_CF5_histogram.png`.
 
@@ -43,8 +43,8 @@ The histogram with the eight thresholds is written to `examples/outputs/segment_
 python examples/02_segment_one_slice.py --sample AG24_VN02
 ```
 
-On the limestone cores the histogram has a single peak, the algorithms spread across it, and the range across
-algorithms becomes tens of percentage points.
+On the limestone cores the histogram has a single peak. The thresholds of the eight algorithms spread across
+it, and the porosities they give differ by tens of percentage points.
 
 ## 3. Your own slice
 
@@ -75,4 +75,4 @@ pore = thresholds.segment(img, T, R.mask)
 print(metrics.porosity(postprocess.apply(pore, "median", cfg, R.mask), R.eval_mask))
 ```
 
-Next: [Tutorial 3 — spatial uncertainty](03_spatial_uncertainty.md).
+Next: [Tutorial 3: Spatial uncertainty of one slice](03_spatial_uncertainty.md).

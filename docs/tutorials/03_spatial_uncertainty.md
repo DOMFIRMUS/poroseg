@@ -1,4 +1,4 @@
-# Tutorial 3 — How uncertain is the porosity of one slice?
+# Tutorial 3: How uncertain is the porosity of one slice?
 
 **Goal:** quantify the sampling uncertainty of a slice porosity with a spatial block bootstrap and the integral
 range, estimate the representative window, and see why resampling pixels understates the uncertainty.
@@ -22,17 +22,20 @@ the pixel bootstrap interval is 46 times narrower than the block bootstrap inter
 
 ## 2. Read the output
 
-* **Two-point statistics.** The normalised covariance of the pore phase, ρ(h) = (S₂(h) − φ²)/(φ − φ²), is
-  computed inside the disc with a mask-corrected FFT. The correlation length `l_c` is where ρ falls below 1/e;
-  the integral range `A` is the integral of ρ up to its first zero crossing. Here the pores are correlated over
-  about 0.7 mm, a fifth of the 3-mm grains.
-* **Representative window.** A square window of side L has a porosity variance of about φ(1 − φ)A/L², so a
-  single window estimates φ within ±1 percentage point (95 %) only when L ≥ L_REV. Both estimates (from `A` and
-  from the measured standard deviation of tile porosity) are several times larger than the 25.7-mm slice: one
-  slice of this pack is not representative at the ±1-point level.
-* **Three uncertainties of the ROI porosity.** The block bootstrap resamples tiles at least three correlation
-  lengths wide (here 96 px = 2.4 mm); the integral range gives an analytical standard error; the pixel
-  bootstrap treats the 824 754 pixels as independent replicates and gives an interval 46 times too narrow.
+The second line comes from the two-point statistics. The normalised covariance of the pore phase,
+ρ(h) = (S₂(h) − φ²)/(φ − φ²), is computed inside the disc with a mask-corrected FFT. The correlation length
+`l_c` is where ρ falls below 1/e, and the integral range `A` is the integral of ρ up to its first zero
+crossing. Here the pores are correlated over about 0.7 mm, roughly a quarter of the 3-mm grain diameter.
+
+The third line gives the representative window. A square window of side L has a porosity variance of about
+φ(1 − φ)A/L², so a single window estimates φ within ±1 percentage point (95 %) only when L ≥ L_REV. Both
+estimates, from `A` and from the measured standard deviation of tile porosity, are several times larger than
+the 25.7-mm slice, so one slice of this pack is not representative at the ±1-point level.
+
+The last two lines compare three uncertainties of the ROI porosity. The block bootstrap resamples tiles at least
+three correlation lengths wide (here 96 px = 2.4 mm), and the integral range gives an analytical standard
+error. The pixel bootstrap treats the 824 754 pixels as independent replicates and gives an interval 46 times
+too narrow.
 
 If the covariance never crosses zero (a large-scale trend such as cupping, common in the cores), the script
 says that the integral range did not converge, and the integral-range numbers are lower bounds.
@@ -48,4 +51,4 @@ The tile statistics are written to `examples/outputs/spatial_<sample>_<method>_<
 stage of the pipeline does this for every image, algorithm, post-processing level and ROI and adds radial
 porosity profiles (wall and cupping effects).
 
-Next: [Tutorial 4 — the full pipeline on your own slices](04_pipeline_on_your_data.md).
+Next: [Tutorial 4: The full pipeline on your own slices](04_pipeline_on_your_data.md).

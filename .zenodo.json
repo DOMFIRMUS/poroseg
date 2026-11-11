@@ -132,6 +132,6 @@
     "digital rock physics",
     "Python"
   ],
-  "description": "Python package that regenerates, with one command (python -m poroseg.run --stages all), every number, table and figure of the article \"How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison\" (Computers & Geosciences, submitted). Version 1.0.0 is archived, together with the micro-CT slices and all derived data, in the Zenodo record https://doi.org/10.5281/zenodo.23748709; this file is kept only for future releases.",
+  "description": "Python package that regenerates, with one command (python -m poroseg.run --stages all), every number, table and figure of the article \"How much of the porosity measured on micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and laboratory comparison\" (Computers & Geosciences, submitted). Version 1.1.0 is archived, together with the micro-CT slices and all derived data, at https://doi.org/10.5281/zenodo.24122454 (all versions: https://doi.org/10.5281/zenodo.23748708). This file is kept only for future releases.",
   "notes": "Funding: PRH-ANP/FAPESP (2025/17670-6; 2025/03556-7; 2024/10544-2), FACEPE (IBPG-1473-3.09/25; APQ-1428-3.01/25), CAPES (Finance Code 001)."
 }

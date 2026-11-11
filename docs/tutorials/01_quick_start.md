@@ -1,4 +1,4 @@
-# Tutorial 1 — Quick start with a synthetic slice of known truth
+# Tutorial 1: Quick start with a synthetic slice of known truth
 
 **Goal:** install `poroseg`, check the installation and see, on an image whose true porosity is known, how much
 the eight thresholding algorithms disagree. **Time:** 5 minutes. **Data:** none (the image is generated).
@@ -63,4 +63,4 @@ The same image gives porosities that differ by tens of percentage points dependi
 known truth you can tell which one is right; with a real image you cannot, which is why the pipeline
 quantifies the spread (Tutorial 4) and validates algorithms on synthetic images (stage `synthetic`).
 
-Next: [Tutorial 2 — segment a real slice](02_segment_a_slice.md).
+Next: [Tutorial 2: Segment a real slice](02_segment_a_slice.md).

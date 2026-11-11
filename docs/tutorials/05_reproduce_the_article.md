@@ -1,4 +1,4 @@
-# Tutorial 5 — Reproduce the article
+# Tutorial 5: Reproduce the article
 
 **Goal:** regenerate every number, table and figure of the article *"How much of the porosity measured on
 micro-CT slices is the analyst's choice? A factorial uncertainty analysis with synthetic ground truth and
@@ -56,7 +56,7 @@ table in one workbook.
 ## 4. Archived versions
 
 Releases of the code and data are archived on Zenodo; https://doi.org/10.5281/zenodo.23748708 always resolves
-to the latest version. Version 1.1.0 of the code contains the laboratory porosity of the three limestone cores
-used in the article (helium porosity of the whole plug, Vila Nova 2020); version 1.0.0 had the values of
-another plug numbering for these three cores, which changes only the comparison of the cores with the
-laboratory.
+to the latest version. Version 1.1.0 (https://doi.org/10.5281/zenodo.24122454) contains the laboratory
+porosity of the three limestone cores used in the article (helium porosity of the whole plug, Vila Nova 2020).
+Version 1.0.0 had the values of another plug numbering for these three cores, which changes only the comparison
+of the cores with the laboratory.

@@ -1,4 +1,4 @@
-# Tutorial 4 — Run the full pipeline on your own slices
+# Tutorial 4: Run the full pipeline on your own slices
 
 **Goal:** run the factorial uncertainty analysis on a set of slices of your own, using the synthetic test
 dataset of the repository as a template. **Time:** about 2 minutes for the test dataset with `--quick`.
@@ -35,13 +35,13 @@ status: {'segmentation': 'ok (5.3s)', 'descriptive': 'ok (38.1s)', 'spatial': 'o
 
 Results are in `examples/data/outputs_quick/` (`--quick` appends `_quick` to the output folder). Start with:
 
-* `RESULTS_DIGEST.md` — the key numbers in words (for example the share of the variability due to the
+* `RESULTS_DIGEST.md`: the key numbers in words (for example the share of the variability due to the
   analyst's choices, `inference_vd_pp_analyst_pct`);
-* `figures/porosity_by_method.png` — porosity of each image by algorithm, with spatial uncertainty bars and the
+* `figures/porosity_by_method.png`: porosity of each image by algorithm, with spatial uncertainty bars and the
   reference value;
-* `figures/variance_decomposition.png` and `tables/variance_components.csv` — material versus analyst shares;
-* `data/segmentation_factorial.csv` — every segmentation of the factorial design;
-* `data/spatial_summary.csv` — correlation length, integral range, L_REV and the three uncertainties.
+* `figures/variance_decomposition.png` and `tables/variance_components.csv`: material versus analyst shares;
+* `data/segmentation_factorial.csv`: every segmentation of the factorial design;
+* `data/spatial_summary.csv`: correlation length, integral range, L_REV and the three uncertainties.
 
 The `legacy` stage audits the original code of the article and does not apply to other data; the `synthetic`
 and `ml_baseline` stages do not depend on your images and can be added if you want the benchmark.
@@ -63,4 +63,4 @@ and `ml_baseline` stages do not depend on your images and can be added if you wa
 Check `figures/supp_roi_detection.png` first: if a disc is wrong, give it explicitly in `samples.csv`. The
 [user guide](../USER_GUIDE.md) lists every option and output.
 
-Next: [Tutorial 5 — reproduce the article](05_reproduce_the_article.md).
+Next: [Tutorial 5: Reproduce the article](05_reproduce_the_article.md).
