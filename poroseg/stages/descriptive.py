@@ -603,7 +603,7 @@ def _fig_study_design(ctx, n_samples, n_seg):
     _box(ax, xa, 38.0, wa, ytop - 38.0, "Micro-CT slices",
          [f"{n_samples} × 2-D, 16-bit", "4 granular packs", "5 rock cores", "25 / 40 µm pixel"])
     _box(ax, xa, ybot, wa, 25.0, "Laboratory porosity",
-         ["4 physical methods", "+ laboratory µCT", "(7 of 9 samples)"])
+         ["packs: 4 methods + µCT", "limestone cores: helium", "(7 of 9 samples)"])
     # --- B: ROI + normalisation
     xb, wb = cols["B"]
     _box(ax, xb, 38.0, wb, ytop - 38.0, "2 ROI designs",
@@ -1200,8 +1200,8 @@ def run(ctx) -> None:
                  "binary post-processing levels applied to the pore phase, giving "
                  f"{n} × 2 × {len(ctx.methods)} × {len(ctx.posts)} = {len(seg)} segmentations. Three "
                  "post-processing levels preserve area and yield porosity; the medial-axis skeleton is used only "
-                 "as a topology descriptor. Laboratory porosity (mean of four physical methods; single value of "
-                 "unstated method for VN01, VN02, VN04; the laboratory's own µCT value analysed separately) "
+                 "as a topology descriptor. Laboratory porosity (mean of four physical methods for the packs; single "
+                 "helium porosity of the whole plug for VN01, VN02, VN04; the laboratory's own µCT value analysed separately) "
                  "enters only the agreement analysis. Method colours and markers (circle = global, square = "
                  "local) are used consistently in all figures.", kind="main")
 
@@ -1308,7 +1308,7 @@ def run(ctx) -> None:
                    "gravimetric, indirect, gas porosimetry); Lab µCT: the laboratory's own tomographic estimate "
                    "(not used as reference).",
                    float_format="{:.1f}",
-                   notes="† single laboratory value, method not stated in the source spreadsheet. – no laboratory "
+                   notes="† single helium porosity of the whole plug (Vila Nova 2020). – no laboratory "
                          "value. Values < 1 % or > 90 % are degenerate segmentations (all pixels or none). "
                          "Pixel size pending confirmation.")
     frows = []

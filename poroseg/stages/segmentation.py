@@ -152,7 +152,7 @@ def run(ctx) -> None:
                    "independent physical methods (direct porosimetry, gravimetry, indirect porosimetry, gas "
                    "porosimetry); Lab µCT is the laboratory's own tomographic estimate, analysed separately "
                    "and never used as reference.",
-                   notes="* single value, laboratory method not stated in the source spreadsheet. "
+                   notes="* single helium porosity of the whole plug (Vila Nova 2020). "
                          "Pixel sizes inferred from TIFF resolution tags / file names - confirm with acquisition logs.")
 
     # ---------------------------------------------------- methods & parameters

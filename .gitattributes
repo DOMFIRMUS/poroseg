@@ -2,3 +2,7 @@
 * text=auto
 # input tables are checksummed in the provenance record: keep their bytes as they are
 data/*.csv -text
+data/legacy_results/**/*.csv -text
+# images
+*.tif binary
+*.png binary

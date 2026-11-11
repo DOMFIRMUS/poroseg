@@ -1,0 +1,4 @@
+sample_id,specimen,method,porosity_pct,has_image,source
+SYN_PACK,SYN_PACK,gas,36.51,True,true total porosity of the phantom inside the disc
+SYN_BOOL,SYN_BOOL,gas,16.94,True,true total porosity of the phantom inside the disc
+SYN_MULTI,SYN_MULTI,gas,23.97,True,true total porosity of the phantom inside the disc

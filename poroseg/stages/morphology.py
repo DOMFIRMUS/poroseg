@@ -360,9 +360,9 @@ def _fig_unresolved(ctx, gs) -> None:
                  "Porosity of every image from the eight binary segmentations (coloured symbols; disc ROI, no "
                  "post-processing), the grey-scale partial-volume estimate φ_PV (grey bar: range over endmember "
                  "definitions; black line: central value) and, where available, the laboratory reference (black "
-                 "diamond: mean ± SD of four physical methods for the granular packs CF4-CF10, single value of "
-                 "unstated method for VN01-VN04) and the laboratory's own µCT porosity (open square). The vertical "
-                 "spread of the coloured symbols is the analyst-choice uncertainty; the gap between them and the "
+                 "diamond: mean ± SD of four physical methods for the granular packs CF4-CF10, single helium porosity "
+                 "of the whole plug for VN01, VN02 and VN04) and the laboratory's own µCT porosity (open square). The vertical "
+                 "spread of the coloured symbols is the analyst-choice uncertainty; in the packs the gap between them and the "
                  "laboratory value is porosity below the image resolution (plus partial-volume misclassification).",
                  kind="main")
     plt.close(fig)
@@ -409,7 +409,7 @@ def _tables(ctx, summ, gs, un, mo) -> None:
                            "φ_PV − φ_Otsu (pp)": 100 * u["phi_pv_minus_seg"]})
         ctx.save_table(ut, "unresolved_porosity",
                        "Laboratory porosity against image porosity for the seven images with a reference: laboratory "
-                       "mean (SD over four physical methods for the packs; single value of unstated method for the "
+                       "mean (SD over four physical methods for the packs; single helium porosity of the whole plug for the "
                        "cores), laboratory µCT, grey-scale φ_PV, Otsu and the range over eight algorithms (no "
                        "post-processing, disc ROI), the apparent unresolved porosity φ_lab − φ_Otsu with its standard "
                        "uncertainty u = sqrt(SD_lab² + SE_block²) and the partial-volume part φ_PV − φ_Otsu.",

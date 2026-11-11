@@ -1,0 +1,4 @@
+sample_id,label,file,group,holder,grain_size_mm,pixel_size_um,pixel_size_source,roi_cx,roi_cy,roi_r,notes
+SYN_PACK,S-PACK,SYN_PACK.tif,granular_pack,free,,25.0,synthetic,319.5,319.5,294,"synthetic grain_pack; blur 1.5 px, noise 0.05, cupping 0.1"
+SYN_BOOL,S-BOOL,SYN_BOOL.tif,consolidated,free,,25.0,synthetic,319.5,319.5,294,"synthetic boolean_pores; blur 1.5 px, noise 0.05, cupping 0.1"
+SYN_MULTI,S-MULTI,SYN_MULTI.tif,consolidated,free,,25.0,synthetic,319.5,319.5,294,"synthetic multiscale; blur 1.5 px, noise 0.08, cupping 0.15"

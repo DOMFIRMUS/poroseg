@@ -296,7 +296,7 @@ def _fig_porosity_by_method(ctx, seg, sp):
                  "Porosity of each image from the eight thresholding algorithms (disc ROI, no post-processing). Error "
                  "bars: 95 % block-bootstrap intervals of the spatial sampling uncertainty (often smaller than the "
                  "symbol). Solid line: laboratory reference (granular packs a-d: mean of four physical methods, grey "
-                 "band ± SD; cores e-g: single value of unstated method); dashed line: laboratory µCT porosity. TQ06 "
+                 "band ± SD; cores e-g: single helium porosity of the whole plug); dashed line: laboratory µCT porosity. TQ06 "
                  "and GT01 have no laboratory value. Each panel has its own y-range starting at zero.", kind="main")
     plt.close(fig)
 
@@ -377,8 +377,8 @@ def _lab(ctx, seg, sp):
                         "P(best MAE)": a0["prob_best"].round(2)})
     ctx.save_table(tab, "lab_agreement",
                    f"Agreement between image porosity and the laboratory reference for the {len(with_ref)} images with a "
-                   "reference (4 granular packs with four physical methods; 3 cores with a single value of unstated "
-                   "method), disc ROI, no post-processing. Bias = image − laboratory with t-based 95 % CI; HL = "
+                   "reference (4 granular packs with four physical methods; 3 limestone cores with a single helium "
+                   "porosity of the whole plug), disc ROI, no post-processing. Bias = image − laboratory with t-based 95 % CI; HL = "
                    "Hodges-Lehmann estimate with exact CI; LoA = Bland-Altman limits of agreement; MAE with "
                    "bootstrap CI over images; CCC = Lin's concordance correlation with Fisher-z CI; exact Wilcoxon "
                    "signed-rank p of the bias; P(best MAE) = bootstrap probability of having the smallest MAE. With "
@@ -495,7 +495,10 @@ def _fig_lab(ctx, seg, ref, with_ref, a0) -> None:
 # ============================================================================ 5. laboratory-internal
 def _lab_internal(ctx, seg):
     K = ctx.add_key
-    r = ctx.lab_ref[ctx.lab_ref["ref_kind"] == "multi-method"].copy()
+    r = ctx.lab_ref[(ctx.lab_ref["ref_kind"] == "multi-method") & ctx.lab_ref["uct"].notna()].copy()
+    if len(r) < 3:       # needs the laboratory's own uCT value next to the physical methods (packs of the article)
+        ctx.log("laboratory-internal comparison skipped: %d specimen(s) with a laboratory uCT value", len(r))
+        return
     x, y = 100 * r["ref"].to_numpy(), 100 * r["uct"].to_numpy()
     ba = S.bland_altman(x, y)
     hl = S.hodges_lehmann(y - x)

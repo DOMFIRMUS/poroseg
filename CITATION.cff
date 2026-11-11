@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the article and the archived code."
 title: "poroseg: segmentation-induced uncertainty of micro-CT porosity"
-version: 1.0.0
+version: 1.1.0
 license: MIT
-doi: "10.5281/zenodo.23748709"
+doi: "10.5281/zenodo.23748708"
 repository-code: "https://github.com/DOMFIRMUS/poroseg"
 authors:
   - family-names: "Firmino Cardoso"

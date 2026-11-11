@@ -44,10 +44,12 @@ PACK_CF12_M,CF12_M,gravimetric,40.07,False,dados reais de porosidade.xlsx: row 1
 PACK_CF12_M,CF12_M,indirect,38.01,False,dados reais de porosidade.xlsx: row 11
 PACK_CF12_M,CF12_M,gas,36.83,False,dados reais de porosidade.xlsx: row 11
 PACK_CF12_M,CF12_M,uct,27.03,False,dados reais de porosidade.xlsx: row 11
-AG24_VN01,Amostra 1,unspecified,16.17,True,dados reais de porosidade.xlsx: row 16
-AG24_VN02,Amostra 2,unspecified,24.38,True,dados reais de porosidade.xlsx: row 17
-CONS_Amostra3,Amostra 3,unspecified,27.29,False,dados reais de porosidade.xlsx: row 18
-AG24_VN04,Amostra 4,unspecified,21.05,True,dados reais de porosidade.xlsx: row 19
-CONS_Amostra5,Amostra 5,unspecified,22.71,False,dados reais de porosidade.xlsx: row 20
-CONS_Amostra6,Amostra 6,unspecified,24.39,False,dados reais de porosidade.xlsx: row 21
-CONS_Amostra7,Amostra 7,unspecified,25.21,False,dados reais de porosidade.xlsx: row 22
+AG24_VN01,VN01,helium,16.55,True,Vila Nova (2020): helium porosity of plug VN01 (corrected 2026-11-01)
+AG24_VN02,VN02,helium,16.17,True,Vila Nova (2020): helium porosity of plug VN02 = Amostra 1 of Cardoso (2020); dados reais de porosidade.xlsx: row 16
+AG24_VN04,VN04,helium,6.67,True,Vila Nova (2020): helium porosity of plug VN04 (corrected 2026-11-01)
+CONS_Amostra2,Amostra 2,helium,24.38,False,Cardoso (2020) Table 7 (not VN02); dados reais de porosidade.xlsx: row 17
+CONS_Amostra3,Amostra 3,helium,27.29,False,Cardoso (2020) Table 7; dados reais de porosidade.xlsx: row 18
+CONS_Amostra4,Amostra 4,helium,21.05,False,Cardoso (2020) Table 7 (not VN04); dados reais de porosidade.xlsx: row 19
+CONS_Amostra5,Amostra 5,helium,22.71,False,Cardoso (2020) Table 7; dados reais de porosidade.xlsx: row 20
+CONS_Amostra6,Amostra 6,helium,24.39,False,Cardoso (2020) Table 7; dados reais de porosidade.xlsx: row 21
+CONS_Amostra7,Amostra 7,helium,25.21,False,Cardoso (2020) Table 7; dados reais de porosidade.xlsx: row 22

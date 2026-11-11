@@ -1,8 +1,15 @@
 outputs/
 outputs_quick/
+examples/outputs/
+examples/data/outputs/
+examples/data/outputs_quick/
 notebooks/
 __pycache__/
 *.pyc
 .pytest_cache/
+# micro-CT slices are tracked only in the data folders below
 *.tif
 *.tiff
+!data/images/*.tif
+!examples/data/images/*.tif
+!examples/data/truth/*.tif

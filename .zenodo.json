@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "poroseg: segmentation-induced uncertainty of micro-CT porosity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "language": "eng",
   "creators": [

@@ -12,11 +12,11 @@ project:
   seed: 20250923            # master seed; every stochastic step derives from it
 
 paths:
-  images_dir: "../imagens"
+  images_dir: "data/images"                 # the nine 16-bit micro-CT slices of the article
   samples_csv: "data/samples.csv"
   lab_csv: "data/lab_porosity.csv"
-  lab_xlsx: "../dados reais de porosidade.xlsx"
-  legacy_results_dir: "../results/analysis_20250723_145220"
+  lab_xlsx: "../dados reais de porosidade.xlsx"   # laboratory spreadsheet, read only by scripts/build_lab_table.py (not distributed)
+  legacy_results_dir: "data/legacy_results/analysis_20250723_145220"   # stored results of the original code ('legacy' stage)
   output_dir: "outputs"
 
 # -----------------------------------------------------------------------------
